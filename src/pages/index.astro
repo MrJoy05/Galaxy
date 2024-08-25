@@ -1,0 +1,37 @@
+---
+import '@fontsource-variable/pixelify-sans';
+import Layout from '../layouts/Layout.astro';
+import Modalshowcom from '../components/React/ModalCont';
+import Cardsimages from '../components/React/Cardsimg';
+---
+
+<Layout title="Galactic Odyssey">
+  <!-- Sección Hero -->
+  <div class="relative h-screen bg-zinc-900 text-white">
+    <img src="/images/Galaxy.png" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-60">
+    <div class="relative z-10 flex flex-col items-start justify-center h-full px-8 md:px-16 lg:px-24">
+      <h1 class="text-4xl font-bold mb-2">Galactic Odyssey</h1>
+      <p class="text-sm uppercase tracking-widest mb-4">Explorando más allá de las estrellas</p>
+      <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6" style="font-family: 'Pixelify Sans Variable', system-ui;">Prepárate para el futuro.</h2>
+      <Modalshowcom client:load/>
+    </div>
+  </div>
+
+  <!-- Sección Cultura -->
+  <div class="flex flex-col md:flex-row items-center justify-center bg-orange-500 p-8">
+    <div class="md:w-1/2">
+      <img src="https://placehold.co/600x400" alt="Team working" class="w-full h-auto rounded-lg shadow-md">
+    </div>
+    <div class="md:w-1/2 text-white text-center md:text-left mt-8 md:mt-0 md:ml-8">
+      <h2 class="text-3xl font-bold mb-4">Nuestra cultura impulsa lo que hacemos.</h2>
+      <p class="mb-6">Nuestros valores conforman cada acción y decisión que tomamos.</p>
+      <button class="bg-white text-orange-500 font-semibold py-2 px-4 rounded-full shadow-md hover:bg-zinc-200 transition duration-300">
+        Descubre más
+      </button>     
+    </div>
+  </div>
+
+  <!-- Sección Películas Espaciales -->
+  <Cardsimages/ client:load>
+</Layout>
+
