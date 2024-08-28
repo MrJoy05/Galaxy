@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Define el tipo para las propiedades de Card
 interface CardProps {
   title: string;
