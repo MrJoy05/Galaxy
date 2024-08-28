@@ -16,9 +16,10 @@ const Card: React.FC<CardProps> = ({ title, description, imageSrc }) => (
     <img
       src={imageSrc}
       alt={`${title} Image`}
-      className="object-cover w-full h-64 md:h-80 rounded-lg transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+      className="object-cover w-full h-72 md:h-96 rounded-lg transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+      style={{ opacity: 1 }} 
     />
-    <div className="absolute inset-0 bg-black/60 group-hover:opacity-90 transition-opacity flex items-end p-4">
+    <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-opacity flex items-end p-4">
       <div className="text-white">
         <h3 className="font-semibold text-lg">{title}</h3>
         <p className="text-sm">{description}</p>
@@ -60,28 +61,30 @@ const Cardsimages: React.FC = () => {
   ];
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 relative">
-      {/* Fondo con GIF */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative h-screen bg-zinc-900 text-white">
+      {/* Fondo negro */}
+      <div className="absolute inset-0 z-0 bg-black">
         <img
           src="/images/space.gif"
           alt="Space Background"
           className="w-full h-full object-cover opacity-50"
         />
       </div>
-      <div className="relative container mx-auto px-4 text-center z-10">
+
+      {/* Contenido principal */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-8 md:px-16 lg:px-24">
         {/* Título */}
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Pixelify Sans Variable', system-ui" }}>
           Las Mejores Películas Sobre el Espacio
         </h1>
 
         {/* Texto Animado */}
-        <p className="text-lg text-gray-300 mb-8 animate-text" style={{ fontFamily: "'Pixelify Sans Variable', system-ui" }}>
+        <p className="text-lg text-gray-300 mb-8 animate-text text-center" style={{ fontFamily: "'Pixelify Sans Variable', system-ui" }}>
           Viaja a través de las estrellas y explora mundos desconocidos con estas increíbles películas espaciales.
         </p>
 
         {/* Grid de Tarjetas */}
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
           {movies.map((movie, index) => (
             <Card
               key={index}
